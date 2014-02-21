@@ -40,12 +40,12 @@
         <!-- CHANGE IT -->
         <meta-data
             android:name="com.pem.app.Place_API_KEY"
-            android:value="AIzaSyBFiSFTyYB0_w5YbJ83k012zwhRUpPs1l8" />
+            android:value="API KEY BROWSER" />
 
         <!-- CHANGE IT -->
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyBAvdSzihA8Yc7e1UEPWiftIJbp1cr-Z54"/>
+            android:value="API KEY ANDROID"/>
 
         <service
             android:name="com.octo.android.robospice.JacksonSpringAndroidSpiceService"

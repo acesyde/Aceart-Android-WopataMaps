@@ -19,7 +19,11 @@ import com.pem.app.rest.responses.NearbySearchPlacesResponse;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Locale;
 
+/**
+ * Use Place API
+ */
 public class PlacesHelper {
 
     private SpiceManager contentManager;
@@ -32,6 +36,10 @@ public class PlacesHelper {
         this.contentManager = contentManager;
     }
 
+    /**
+     * Search nerbay location Address or Geo point
+     * @param searchLocation
+     */
     public void searchNearby(SearchLocation searchLocation) {
         if(searchLocation != null) {
 
@@ -62,8 +70,13 @@ public class PlacesHelper {
             searchNearbyHandler.onSearchNearby(position, poiList);
     }
 
+    /**
+     * Use Geocoder to transform name into lat / lng
+     * @param search query
+     * @return LatLng
+     */
     private LatLng getLatLngFromName(String name) {
-        Geocoder geocoder = new Geocoder(context);
+        Geocoder geocoder = new Geocoder(context, Locale.getDefault());
 
         try {
             List<Address> addressList = geocoder.getFromLocationName(name, 1);
@@ -79,6 +92,9 @@ public class PlacesHelper {
         return null;
     }
 
+    /**
+     * POI Request Listener
+     */
     private class LoadPOIRequestListener implements RequestListener<NearbySearchPlacesResponse> {
 
         @Override

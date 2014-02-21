@@ -9,10 +9,15 @@ import com.google.android.gms.maps.model.LatLng;
 import com.pem.app.models.SearchLocation;
 
 /**
- * Created by Pierre-Emmanuel on 21/02/14.
+ * Location helper.
  */
 public class LocationHelper {
 
+    /**
+     * Get current user location with providers
+     * @param context
+     * @return
+     */
     public static SearchLocation getCurrentLocation(Context context) {
         LocationManager locationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
 
@@ -27,6 +32,11 @@ public class LocationHelper {
         return null;
     }
 
+    /**
+     * Get Location from location point to Search location
+     * @param location
+     * @return
+     */
     public static SearchLocation getLocation(Location location) {
         if(location != null) {
             SearchLocation searchLocation = new SearchLocation(SearchLocation.LocationType.LatLng);
